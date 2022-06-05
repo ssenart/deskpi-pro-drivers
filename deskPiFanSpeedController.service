@@ -1,0 +1,10 @@
+[Unit]
+Description = DeskPi PowerOff fan speed controller. It monitors the CPU temperature and adjust the fan speed acordingly.
+After = multi-user.target
+[Service]
+ExecStart=/usr/bin/python /share/DeskPi/deskPiFanSpeedController.py
+WorkingDirectory=/share/DeskPi/log
+User=admin
+Type=simple
+[Install]
+WantedBy = multi-user.target

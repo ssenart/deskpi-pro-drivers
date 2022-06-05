@@ -1,0 +1,10 @@
+[Unit]
+Description = DeskPi PowerOff button listener. It monitors the power button and shutdown gracefully shutdown the system if the button is pressed twice shortly (a double press).
+After = multi-user.target
+[Service]
+ExecStart=/usr/bin/python /share/DeskPi/deskPiListenPowerOffButton.py
+WorkingDirectory=/share/DeskPi/log
+User=admin
+Type=simple
+[Install]
+WantedBy = multi-user.target

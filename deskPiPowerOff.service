@@ -1,0 +1,15 @@
+
+[Unit]
+Description=DeskPi power off
+Conflicts=reboot.target
+Before=halt.target shutdown.target poweroff.target
+DefaultDependencies=no
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python /share/DeskPi/deskPiPowerOff.py
+WorkingDirectory=/share/DeskPi/log
+User=admin
+RemainAfterExit=yes
+TimeoutSec=1
+[Install]
+WantedBy=halt.target shutdown.target poweroff.target
